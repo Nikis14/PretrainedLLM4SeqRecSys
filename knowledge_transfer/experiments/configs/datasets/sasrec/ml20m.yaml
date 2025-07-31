@@ -1,0 +1,43 @@
+seed: 42
+
+model:
+  model_name: SASRecLLM
+  item_num: 0
+  user_num: 0
+  maxlen: 50
+  hidden_units: 256
+  num_blocks: 4
+  num_heads: 4
+  dropout_rate: 0.2
+  initializer_range: 0.02
+  add_head: true
+  reconstruction_layer: 1
+  weighting_scheme: exponential
+  weight_scale: 0.1
+  use_down_scale: True
+  use_upscale: False
+  multi_profile: False
+  multi_profile_aggr_scheme: mean
+
+training:
+  batch_size: 256
+  epochs: 200
+  learning_rate: 0.00075
+  reconstruct_loss: MSE
+  eval_every: 1
+  model_dir: models/
+  alpha: 0.8
+  fine_tune_epoch: 30
+  scale_guide_loss: false
+  save_checkpoints: false
+
+data:
+  profile_train_sequences: /home/.../generate_user_profiles/recsys-user-profiles/data/ml-20m/processed/train_sequences.pkl
+  finetune_train_sequences: /home/.../generate_user_profiles/recsys-user-profiles/data/ml-20m/processed/train_sequences.pkl
+  valid_sequences: /home/.../generate_user_profiles/recsys-user-profiles/data/ml-20m/processed/valid_sequences.pkl
+  test_sequences: /home/.../generate_user_profiles/recsys-user-profiles/data/ml-20m/processed/test_sequences.pkl
+  mappings: /home/.../generate_user_profiles/recsys-user-profiles/data/ml-20m/processed/mappings.pkl
+  counts: /home/.../generate_user_profiles/recsys-user-profiles/data/ml-20m/processed/counts.pkl
+  user_profile_embeddings_files: /home/.../generate_user_profiles/recsys-user-profiles/data/ml-20m/short_descriptions/ml-20m-gemma-short-e5-all-256.json
+
+experiment_name: "SASRec-LLM_ML20M"
