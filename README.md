@@ -1,11 +1,10 @@
-# The Fellowship of the RecSys and Language Models: Embedding LLM-Driven User Profiles into Sequential Recommendation
+# Pre-trained LLMs Meet Sequential Recommenders: Efficient User-Centric Knowledge Distillation
 
-This repository contains code for the paper ["The Fellowship of the RecSys and Language Models: Embedding LLM-Driven User Profiles into Sequential Recommendation"]()
+This repository contains code for the paper ["Pre-trained LLMs Meet Sequential Recommenders: Efficient User-Centric Knowledge Distillation"]()
 
 ## Abstract
 
-Production-scale recommender systems face critical software engineering challenges when integrating Large Language Models (LLMs): existing approaches create unacceptable latency bottlenecks, require complex maintenance pipelines, and fail to meet the reliability standards of automated software systems serving millions of users. We present a novel knowledge distillation method that addresses these software engineering limitations by transferring user-centric knowledge from pre-trained LLMs into sequential recommender systems without requiring inference-time LLM computation. Our approach generates rich user profiles using LLMs during training, then teaches sequential models to reconstruct these profiles through an auxiliary loss, effectively embedding semantic understanding into model parameters. This design preserves the engineering properties essential for production deployment: fast inference (60× speedup), minimal architectural complexity, and autonomous operation without runtime dependencies on expensive LLM services. Extensive evaluation across four diverse datasets demonstrates substantial improvements in recommendation quality (up to 23.53\% in Recall@10) while maintaining computational efficiency comparable to traditional ID-based models. Notably, our method shows remarkable effectiveness for cold-start scenarios—a critical failure mode in production systems—achieving up to 72\% improvement for items with limited training data. The method represents a significant contribution to AI-enhanced software engineering, demonstrating how to practically integrate advanced AI capabilities into performance-critical systems while maintaining system efficiency.
-
+Sequential recommender systems have achieved significant success in modeling temporal user behavior, but remain limited in capturing rich user semantics beyond basic interaction patterns. Large Language Models (LLMs) present opportunities to enhance user understanding with their reasoning capabilities, yet existing integration approaches create prohibitive inference costs in real time. To address these limitations, we present a novel knowledge distillation method that transfers user-centric knowledge from pre-trained LLMs into sequential recommenders without requiring LLM inference at serving time. Our approach generates rich user profiles using LLM, then teaches sequential models to reconstruct these profiles through an auxiliary loss, effectively embedding semantic reasoning into model parameters. This design maintains the inference efficiency of traditional sequential models while requiring neither architectural modifications nor LLM fine-tuning. Extensive evaluation across four diverse datasets demonstrates substantial improvements in recommendation quality. Notably, our method achives up to 72% improvement in cold-start scenario for items — addressing a critical challenge in recommender systems. This work demonstrates a practical pathway for efficient incorporation of pre-trained LLM capabilities into recommender systems.
 
 ## Method Overview
 
@@ -273,7 +272,7 @@ If you find this work useful for your research, please cite our paper:
 
 ```bibtex
 @article{llm_profile_distillation2025,
-  title={The Fellowship of the RecSys and Language Models: Embedding LLM-Driven User Profiles into Sequential Recommendation},
+  title={Pre-trained LLMs Meet Sequential Recommenders: Efficient User-Centric Knowledge Distillation},
   author={[Author Names]},
   journal={[Journal/Conference]},
   year={2025}
